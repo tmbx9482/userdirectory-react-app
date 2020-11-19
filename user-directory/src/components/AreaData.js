@@ -4,13 +4,14 @@ import Nav from "./NavBar";
 import API from "../utils/API";
 import DataContext from "../utils/DataContext";
 // eslint-disable-next-line
+// the size, weight, font of img for profiles
 const AreaData = () => {
     const [developerState, setDeveloperState] = useState({
         users: [],
         order: "ascend",
         filteredUsers: [],
         headings: [
-            { name: "Image", width: "15%", order: "descend" },
+            { name: "Image", width: "5%", order: "descend" },
             { name: "name", width: "15%", order: "descend" },
             { name: "phone", width: "10%", order: "descend" },
             { name: "email", width: "10%", order: "descend" },
@@ -30,7 +31,7 @@ const AreaData = () => {
             currentOrder = "descend";
         }
 
-        const compareFnc = (a, b) => {
+        const orderProfile = (a, b) => {
             if (currentOrder === "ascend") {
                 // account for missing values
                 if (a[heading] === undefined) {
@@ -63,7 +64,7 @@ const AreaData = () => {
                 }
             }
         };
-        const sortedUsers = developerState.filteredUsers.sort(compareFnc);
+        const sortedUsers = developerState.filteredUsers.sort(orderProfile);
         const updatedHeadings = developerState.headings.map(elem => {
             elem.order = elem.name === heading ? currentOrder : elem.order;
             return elem;
@@ -76,7 +77,7 @@ const AreaData = () => {
         });
     };
 
-    const handleSearchChange = event => {
+    const handleSearchFlip = event => {
         const filter = event.target.value;
         const filteredList = developerState.users.filter(item => {
             let values = item.name.first.toLowerCase() + " " + item.name.last.toLowerCase();
@@ -89,7 +90,8 @@ const AreaData = () => {
         setDeveloperState({ ...developerState, filteredUsers: filteredList });
     };
 
-
+    // Source of information https://reactjs.org/docs/hooks-effect.html
+    // ffect Hook lets you perform side effects in function components
     useEffect(() => {
         API.getUsers().then(results => {
             console.log(results.data.results);
@@ -103,7 +105,7 @@ const AreaData = () => {
 
     return (
         <DataContext.Provider
-            value={{ developerState, handleSearchChange, handleSort }}
+            value={{ developerState, handleSearchFlip, handleSort }}
         >
             <Nav />
             <div className="data-area">

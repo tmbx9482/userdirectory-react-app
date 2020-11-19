@@ -15,6 +15,7 @@ const BodyData = () => {
         return formattedDate;
     }
     // This shows the infomation of the profile
+    // created a table to keep infomation inline
     return (
         <tbody>
             {context.developerState.filteredUsers[0] !== undefined && context.developerState.filteredUsers[0].name !== undefined ? (

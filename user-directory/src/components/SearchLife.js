@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import "../styles/SearchBox.css";
 import DataContext from "../utils/DataContext";
 
 const Profile = () => {
@@ -14,16 +13,20 @@ const Profile = () => {
           </span>
                 </div>
 
-                <input type="date" className="form-control" onChange={e => context.handleSearchChange(e)} />
+                <input type="date" className="form-control" onChange={e => context.handleSearchFlip(e)} />
 
                 <span className="input-group-text" id="">
                     First
           </span>
-                <input type="name" className="form-control" onChange={e => context.handleSearchChange(e)} />
+                <input type="name" className="form-control" onChange={e => context.handleSearchFlip(e)} />
                 <span className="input-group-text" id="">
                     Last
           </span>
-                <input type="name" className="form-control" onChange={e => context.handleSearchChange(e)} />
+                <input type="name" className="form-control" onChange={e => context.handleSearchFlip(e)} />
+                <span className="input-group-text" id="">
+                    Email
+          </span>
+                <input type="data" className="form-control" onChange={e => context.handleSearchFlip(e)} />
             </div>
         </div>
     );

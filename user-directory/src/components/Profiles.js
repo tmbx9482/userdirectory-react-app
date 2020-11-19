@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import "../styles/SearchName.css";
 import DataContext from "../utils/DataContext";
-
+// allows to serach for user by name, DOB or email
 const SearchName = () => {
   const context = useContext(DataContext);
 
@@ -18,7 +17,7 @@ const SearchName = () => {
           type="search"
           placeholder="name"
           aria-label="Search"
-          onChange={e => context.handleSearchChange(e)}
+          onChange={e => context.handleSearchFlip(e)}
         />
       </div>
     </div>
