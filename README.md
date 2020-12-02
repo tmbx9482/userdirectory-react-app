@@ -8,7 +8,7 @@ Allowing users to search for employees within the buesniess directory by thier f
 
 Search Now!
 
-[Employee Directory]()
+[Employee Directory](https://tmbx9482.github.io/userdirectory-react-app/)
 
 
 # User Story🖱📖
@@ -36,16 +36,16 @@ THEN I will be presented with employees at the specified location
 - JavaScript
 - jQuery
 - Node.js
--  REACT
+-  REACT 
+- Random Generated User API
 ````
  NPM:
-  - axiox
+  - axios
   - nodemon
   - react
   - react-dom
   - react-router-dom
   - react-scripts
-- Random User API
 ````
 # Preview 📸
 ![Screenshot (171)](https://user-images.githubusercontent.com/62157127/99927856-dae57a00-2d14-11eb-8b7c-b2719ead7b80.png)
